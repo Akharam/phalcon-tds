@@ -1,5 +1,2 @@
-<div class="ui three item menu">
-  <a class="item" HREF="Users/form"><i class="add user icon"></i>  Nouvel Utilisateur...</a>
-  <a class="item"></a>
-  <a class="item"></a>
-</div>
+<button class="ui green button">Valider</button>
+<button class="ui button">Réinisialiser</button>
