@@ -7,12 +7,12 @@
 <p>This page is located at <code>views/index/index.volt</code></p>
 
 <table>
-{% for user in users   %}
+<?php foreach ($users as $user) { ?>
 
     <tr>
-        <td>{{ user.getFirstname() }}</td>
-        <td>{{ user.getLastname() }}</td>
-        <td>{{ user.getEmail() }}</td>
+        <td><?= $user->getFirstname() ?></td>
+        <td><?= $user->getLastname() ?></td>
+        <td><?= $user->getEmail() ?></td>
     </tr>
-{% endfor %}
+<?php } ?>
 </table>
