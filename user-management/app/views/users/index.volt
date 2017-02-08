@@ -1,23 +1,31 @@
 
-
-<table class="ui sortable celled table">
-  <thead>
-    <tr>
-      <th>Prenom</th>
-      <th>Nom</th>
-      <th>Login</th>
-      <th>Email</th>
-      <th>Role</th>
-      <th></th>
+<div class="ui three item menu">
+  <a class="item" HREF="Users/form"><i class="add user icon"></i>  Nouvel Utilisateur...</a>
+  <a class="item"></a>
+  <a class="item"></a>
+</div>
+  <table class="ui sortable celled table">
+    <thead>
+      <tr>
+        <th><input type="checkbox" name="example"></th>
+        <th class="sorted ascending">Prenom</th>
+        <th class="sorted ascending">Nom</th>
+        <th class="sorted ascending">Email</th>
+        <th class="sorted ascending">Role</th>
+        <th></th>
     </tr>
-  </thead>
+    </thead>
   <tbody>
     {% for user in users   %}
 
         <tr>
+            <td>
+                    <input type="checkbox" name="example">
+                  </td>
             <td>{{ user.getFirstname() }}</td>
             <td>{{ user.getLastname() }}</td>
             <td>{{ user.getEmail() }}</td>
+            <td>{{ user.getRole().getName() }}</td>
         </tr>
     {% endfor %}
   </tbody>
