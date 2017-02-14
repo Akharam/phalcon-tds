@@ -10,10 +10,48 @@ class UsersController extends \Phalcon\Mvc\Controller
         
     }
 
+
     public function formAction($id=NULL)
     {
-        $users=User::findFirst($id);
+        $roles=Role::find();
+        $this->view->setVar("roles",$roles);
+        if(isset($id)) {
+            $users = User::findFirst($id);
+        }
+        else
+            $users = new User();
         $this->view->setVar('user', $users);
+
+        if(isset($_POST["val"]) && $users.getID()== NULL)
+        {
+            if(!empty($_POST["nom"])) {
+                $nom = $_POST["nom"];
+                $users->setLastname($nom);
+            }
+
+            if(!empty($_POST["prenom"])){
+                $prenom = $_POST["prenom"];
+                $users->setFirstname($prenom);}
+
+            $login = $_POST["login"];
+            $mdp = $_POST["password"];
+            $mail = $_POST["mail"];
+            $role = $_POST["role"];
+
+
+
+            $users->setLogin($login);
+            $users->setPassword($mdp);
+            $users->setEmail($mail);
+            $users->setIdrole($role);
+            $users->save();
+            $users = new User();
+            $this->view->setVar('user', $users);
+        }
+        else if(isset($_POST["val"]) && $users.getID()!= NULL)
+        {
+
+        }
     }
 
 }

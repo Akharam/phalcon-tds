@@ -1,6 +1,6 @@
 
 <div class="ui three item menu">
-   {{link_to("users/form/~user.getId()", "<i class='add user icon'></i>  Nouvel Utilisateur...") }}
+   {{link_to("users/form/", "<i class='add user icon'></i>  Nouvel Utilisateur...") }}
 
 </div>
   <table class="ui sortable celled table">
@@ -19,8 +19,8 @@
 
         <tr>
             <td>
-                    <input type="checkbox" name="example">
-                  </td>
+                <input type="checkbox" name="example">
+            </td>
             <td>{{ user.getFirstname() }}</td>
             <td>{{ user.getLastname() }}</td>
             <td>{{ user.getEmail() }}</td>

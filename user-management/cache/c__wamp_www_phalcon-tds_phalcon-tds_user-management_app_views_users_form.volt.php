@@ -1,7 +1,7 @@
 <div class="ui three item menu">
             <?= $this->tag->linkTo(['users/index/', '<button class=\'ui icon button\'>Retour a la liste</button>']) ?>
   </div>
-<form class="ui form">
+<form class="ui form"  method="post">
 
   <div class="field">
 
@@ -33,13 +33,17 @@
     </div>
 
     <div class="field">
-              <select class="ui fluid search dropdown" name="role">
-                <option value="user">user</option>
-                <option value="admin">admin</option>
-                <option value="superadmin">superadmin</option>
-              </select>
-            </div>
-  </div>
-  <button class="ui green button">Valider</button>
+                    <label>Role</label>
+                    <select class="ui simple dropdown item">
+                        <div class="menu">
+                        <?php foreach ($roles as $role) { ?>
+                            <option value="<?= $role->getId() ?>" <?php if (($user->getId() != null)) { ?><?php if (($user->getRole()->getId() == $role->getId())) { ?>selected<?php } ?> <?php } ?>>
+                                <?= $role->getName() ?>
+                            </option>
+                        <?php } ?>
+                        </div>
+                    </select>
+    </div>
+  <input type="submit" class="ui green button" name="val">
   <button class="ui button">Réinisialiser</button>
 </form>
