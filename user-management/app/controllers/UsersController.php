@@ -10,9 +10,10 @@ class UsersController extends \Phalcon\Mvc\Controller
         
     }
 
-    public function formAction()
+    public function formAction($id=NULL)
     {
-
+        $users=User::findFirst($id);
+        $this->view->setVar('user', $users);
     }
 
 }

@@ -1,6 +1,6 @@
 
 <div class="ui three item menu">
-   <?= $this->tag->linkTo(['users/form', '<i class=\'add user icon\'></i>  Nouvel Utilisateur...']) ?>
+   <?= $this->tag->linkTo(['users/form/~user.getId()', '<i class=\'add user icon\'></i>  Nouvel Utilisateur...']) ?>
 
 </div>
   <table class="ui sortable celled table">
@@ -25,6 +25,12 @@
             <td><?= $user->getLastname() ?></td>
             <td><?= $user->getEmail() ?></td>
             <td><?= $user->getRole()->getName() ?></td>
+            <td>
+            <?= $this->tag->linkTo(['users/form/' . $user->getId(), '<button class=\'ui icon button\'><i class=\'edit icon\'></i></button>']) ?>
+            <button class='ui icon button'>
+            <i class="ban icon"></i>
+            </button>
+            </td>
         </tr>
     <?php } ?>
   </tbody>
