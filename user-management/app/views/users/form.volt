@@ -35,13 +35,11 @@
     <div class="field">
                     <label>Role</label>
                     <select class="ui simple dropdown item">
-                        <div class="menu">
                         {% for role in roles %}
                             <option value="{{ role.getId() }}" {% if(user.getId()!=null) %}{% if(user.getRole().getId()==role.getId()) %}selected{% endif %} {% endif %}>
                                 {{ role.getName() }}
                             </option>
                         {% endfor %}
-                        </div>
                     </select>
     </div>
   <input type="submit" class="ui green button" name="val">

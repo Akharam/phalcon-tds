@@ -35,13 +35,11 @@
     <div class="field">
                     <label>Role</label>
                     <select class="ui simple dropdown item">
-                        <div class="menu">
                         <?php foreach ($roles as $role) { ?>
                             <option value="<?= $role->getId() ?>" <?php if (($user->getId() != null)) { ?><?php if (($user->getRole()->getId() == $role->getId())) { ?>selected<?php } ?> <?php } ?>>
                                 <?= $role->getName() ?>
                             </option>
                         <?php } ?>
-                        </div>
                     </select>
     </div>
   <input type="submit" class="ui green button" name="val">
