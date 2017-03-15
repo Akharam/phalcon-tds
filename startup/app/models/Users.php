@@ -13,49 +13,210 @@ class Users extends \Phalcon\Mvc\Model
      * @Identity
      * @Column(type="integer", length=10, nullable=false)
      */
-    public $id;
+    protected $id;
 
     /**
      *
      * @var string
      * @Column(type="string", length=32, nullable=false)
      */
-    public $username;
+    protected $username;
 
     /**
      *
      * @var string
      * @Column(type="string", length=40, nullable=false)
      */
-    public $password;
+    protected $password;
 
     /**
      *
      * @var string
      * @Column(type="string", length=120, nullable=false)
      */
-    public $name;
+    protected $name;
 
     /**
      *
      * @var string
      * @Column(type="string", length=70, nullable=false)
      */
-    public $email;
+    protected $email;
 
     /**
      *
      * @var string
      * @Column(type="string", nullable=false)
      */
-    public $created_at;
+    protected $created_at;
 
     /**
      *
      * @var string
      * @Column(type="string", length=1, nullable=false)
      */
-    public $active;
+    protected $active;
+
+    /**
+     * Method to set the value of field id
+     *
+     * @param integer $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field username
+     *
+     * @param string $username
+     * @return $this
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field password
+     *
+     * @param string $password
+     * @return $this
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field name
+     *
+     * @param string $name
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field email
+     *
+     * @param string $email
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field created_at
+     *
+     * @param string $created_at
+     * @return $this
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field active
+     *
+     * @param string $active
+     * @return $this
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Returns the value of field id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Returns the value of field username
+     *
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * Returns the value of field password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Returns the value of field name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Returns the value of field email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Returns the value of field created_at
+     *
+     * @return string
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * Returns the value of field active
+     *
+     * @return string
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
 
     /**
      * Validations and business logic
