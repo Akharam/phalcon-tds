@@ -84,6 +84,12 @@ class ProductTypes extends \Phalcon\Mvc\Model
         return 'product_types';
     }
 
+    public function __toString()
+    {
+        return $this->name;
+        // TODO: Implement __toString() method.
+    }
+
     /**
      * Allows to query a set of records that match the specified conditions
      *
